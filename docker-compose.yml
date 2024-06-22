@@ -1,0 +1,31 @@
+services:
+  mongodb:
+    image: mongo
+    container_name: "vita-mongodb"
+    #platform: linux/arm64/v8
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: v1taGpt2024TccPucR5
+    ports:
+      - "27017:27017"
+    volumes:
+      - vita-mongodb-volume:/data/db
+    restart: always
+
+  bot:
+    build: .
+    #platform: linux/arm64/v8
+    container_name: "telegram_bot"
+    volumes:
+      - .:/app
+    environment:
+      TELEGRAM_API_KEY: ${TELEGRAM_API_KEY}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      MONGODB_CONNECTION: ${MONGODB_CONNECTION}
+      LOG_LEVEL: ${LOG_LEVEL}
+    depends_on:
+      - mongodb
+    restart: always
+
+volumes:
+  vita-mongodb-volume:

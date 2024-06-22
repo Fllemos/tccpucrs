@@ -1,0 +1,10 @@
+pydub
+telebot
+openai
+openpyxl
+pandas
+python-dateutil
+pymongo
+python-dotenv
+dnspython
+google-cloud-texttospeech
