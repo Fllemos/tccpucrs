@@ -7,7 +7,7 @@ from bot.db_service import DBService
 from bot.tts import Tts
 
 
-MODEL_ENGINE = 'gpt-4-turbo'   #  --> ('gpt-4o') 4o new update | 4o ta uma porcaria na API
+MODEL_ENGINE = 'gpt-4-turbo'   #  --> ('gpt-4o') 4o new update 
 MODEL_WHISPER = 'whisper-1'
 WHISPER_LANGUAGE = 'pt'
 MODEL_TTS_ENGINE = "tts-1-hd" # "tts-1" testando se o pt-br fica melhor
@@ -63,10 +63,6 @@ class GptApi(object):
 
         self.messages = []
 
-        print ('--------------------------------------------------------------------------- Mensagem parseada')
-        print (obj_message)
-
-        
         return obj_message
 
 
@@ -124,10 +120,6 @@ class GptApi(object):
 
         self.messages = []
 
-        print ('--------------------------------------------------------------------------- Mensagem PHOTO parseada')
-        print (obj_message)
-
-        
         return obj_message
 
 
